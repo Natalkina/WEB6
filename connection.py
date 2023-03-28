@@ -10,7 +10,7 @@ def create_connection():
     """ create a database connection to a Postgres database """
     conn = None
     try:
-        conn = connect(host=os.getenv("HOST"), user=os.getenv("USER"), password=os.getenv("USER"), database=os.getenv("DATABASE"), port=5432)
+        conn = connect(host=os.getenv("HOST"), user=os.getenv("USER"), password=os.getenv("PASSWORD"), database=os.getenv("DATABASE"), port=5432)
         yield conn
         conn.rollback()
         conn.close()
